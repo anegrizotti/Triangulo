@@ -6,47 +6,219 @@ namespace Triangulo.ConsoleApp
     {
         static void Main(string[] args)
         {
-            string comando = "";
+            string comando = null;
+            bool continuarX = true;
+            bool continuarY = true;
+            bool continuarZ = true;
+            string x = null;
+            string y = null;
+            string z = null;
+            char[] charX;
+            char[] charY;
+            char[] charZ;
 
             do
             {
+               while (continuarX == true || continuarY == true || continuarZ == true) {
+                    Console.WriteLine("Digite números para os vértices X, Y e Z.");
+                    Console.WriteLine();
+                    Console.Write("Vértice X: ");
+                    x = Console.ReadLine();
 
-                Console.Write("Vértice X: ");
-                double x = double.Parse(Console.ReadLine());
+                    Console.Write("Vértice Y: ");
+                    y = Console.ReadLine();
 
-                Console.Write("Vértice Y: ");
-                double y = double.Parse(Console.ReadLine());
+                    Console.Write("Vértice Z: ");
+                    z = Console.ReadLine();
+                    Console.WriteLine();
 
-                Console.Write("Vértice Z: ");
-                double z = double.Parse(Console.ReadLine());
+                    charX = x.ToCharArray();
+                    charY = y.ToCharArray();
+                    charZ = z.ToCharArray();
 
-                while (x + y <= z || x + z <= y || y + z <= x || z + x <= y)
+                    for (int i = 0; i < charX.Length; i++)
+                    {
+                        if (char.IsDigit(charX[i]) == false)
+                        {
+                            continuarX = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charX[i]) == true)
+                        {
+                            continuarX = false;
+                        }
+                    }
+
+                    for (int i = 0; i < charY.Length; i++)
+                    {
+                        if (char.IsDigit(charY[i]) == false)
+                        {
+                            continuarY = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charY[i]) == true)
+                        {
+                            continuarY = false;
+                        }
+                    }
+
+                    for (int i = 0; i < charZ.Length; i++)
+                    {
+                        if (char.IsDigit(charZ[i]) == false)
+                        {
+                            continuarZ = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charZ[i]) == true)
+                        {
+                            continuarZ = false;
+                        }
+
+                    }
+
+                }
+
+                double dX = Convert.ToDouble(x);
+                double dY = Convert.ToDouble(y);
+                double dZ = Convert.ToDouble(z);
+
+                while (dX + dY <= dZ || dX + dZ <= dY || dY + dZ <= dX || dZ + dX <= dY)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Triângulo inválido! Tente novamente.");
                     Console.ResetColor();
                     Console.WriteLine();
 
-
+                    Console.WriteLine("Digite números para os vértices X, Y e Z.");
+                    Console.WriteLine();
                     Console.Write("Vértice X: ");
-                    x = double.Parse(Console.ReadLine());
+                    x = Console.ReadLine();
 
                     Console.Write("Vértice Y: ");
-                    y = double.Parse(Console.ReadLine());
+                    y = Console.ReadLine();
 
                     Console.Write("Vértice Z: ");
-                    z = double.Parse(Console.ReadLine());
+                    z = Console.ReadLine();
+
+                    charX = x.ToCharArray();
+                    charY = y.ToCharArray();
+                    charZ = z.ToCharArray();
+
+                    for (int i = 0; i < charX.Length; i++)
+                    {
+                        if (char.IsDigit(charX[i]) == false)
+                        {
+                            continuarX = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charX[i]) == true)
+                        {
+                            continuarX = false;
+                        }
+                    }
+
+                    for (int i = 0; i < charY.Length; i++)
+                    {
+                        if (char.IsDigit(charY[i]) == false)
+                        {
+                            continuarY = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charY[i]) == true)
+                        {
+                            continuarY = false;
+                        }
+                    }
+
+                    for (int i = 0; i < charZ.Length; i++)
+                    {
+                        if (char.IsDigit(charZ[i]) == false)
+                        {
+                            continuarZ = true;
+                            break;
+                        }
+                        else if (char.IsDigit(charZ[i]) == true)
+                        {
+                            continuarZ = false;
+                        }
+
+                    }
+
+                    while (continuarX == true || continuarY == true || continuarZ == true)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Digite números para os vértices X, Y e Z.");
+                        Console.WriteLine();
+                        Console.Write("Vértice X: ");
+                        x = Console.ReadLine();
+
+                        Console.Write("Vértice Y: ");
+                        y = Console.ReadLine();
+
+                        Console.Write("Vértice Z: ");
+                        z = Console.ReadLine();
+
+                        charX = x.ToCharArray();
+                        charY = y.ToCharArray();
+                        charZ = z.ToCharArray();
+
+                        for (int i = 0; i < charX.Length; i++)
+                        {
+                            if (char.IsDigit(charX[i]) == false)
+                            {
+                                continuarX = true;
+                                break;
+                            }
+                            else if (char.IsDigit(charX[i]) == true)
+                            {
+                                continuarX = false;
+                            }
+                        }
+
+                        for (int i = 0; i < charY.Length; i++)
+                        {
+                            if (char.IsDigit(charY[i]) == false)
+                            {
+                                continuarY = true;
+                                break;
+                            }
+                            else if (char.IsDigit(charY[i]) == true)
+                            {
+                                continuarY = false;
+                            }
+                        }
+
+                        for (int i = 0; i < charZ.Length; i++)
+                        {
+                            if (char.IsDigit(charZ[i]) == false)
+                            {
+                                continuarZ = true;
+                                break;
+                            }
+                            else if (char.IsDigit(charZ[i]) == true)
+                            {
+                                continuarZ = false;
+                            }
+
+                            Console.WriteLine();
+                        }
+                    }
+                
+
+                    dX = Convert.ToDouble(x);
+                    dY = Convert.ToDouble(y);
+                    dZ = Convert.ToDouble(z);
                 }
 
-                if (x == y && y == z && x == z)
+                if (dX == dY && dY == dZ && dX == dZ)
                 {
                     Console.WriteLine("Triângulo eqüilátero - Todos os lados são iguais.");
                 }
-                else if (x == y && x != z || x == z && x != y || y == z && y != x)
+                else if (dX == dY && dX != dZ || dX == dZ && dX != dY || dY == dZ && dY != dX)
                 {
                     Console.WriteLine("Triângulo isósceles - Dois lados são iguais.");
                 }
-                else if (x != y && x != z && y != z && z != x)
+                else if (dX != dY && dX != dZ && dY != dZ && dZ != dX)
                 {
                     Console.WriteLine("Triângulo escaleno - Todos os lados são diferentes.");
                 }
@@ -66,6 +238,9 @@ namespace Triangulo.ConsoleApp
 
                 }
 
+                continuarX = true;
+                continuarY = true;
+                continuarZ = true;
                 Console.WriteLine();
 
             } while (comando == "C");
